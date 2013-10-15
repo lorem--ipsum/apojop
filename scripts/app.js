@@ -1,4 +1,4 @@
-angular.module('npp', ['ng-pojo-print'])
+angular.module('npp', ['apojop'])
 
 .config(function config($routeProvider) {
   $routeProvider
