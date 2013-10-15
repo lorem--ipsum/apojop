@@ -39,4 +39,12 @@ describe('ng-pojo-print', function() {
     expect(prettils.columns).not.toHaveBeenCalled();
     expect(prettils.levels).toHaveBeenCalledWith(givenObject, 12, '  ');
   }));
+  
+  it('should cast string values to number', inject(function(prettyFilter, prettils) {
+    var givenObject = {foo: 42};
+    prettyFilter(givenObject, "12", 'pouet');
+    
+    expect(prettils.columns).not.toHaveBeenCalled();
+    expect(prettils.levels).toHaveBeenCalledWith(givenObject, 12, '  ');
+  }));
 });

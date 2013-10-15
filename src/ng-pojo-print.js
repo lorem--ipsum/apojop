@@ -4,6 +4,8 @@ angular.module('ng-pojo-print', ['ng-pojo-print.utils'])
   return function(object, value, type) {
     if (value === undefined) {
       value = 2;
+    } else {
+      value = +value;
     }
 
     if (type === 'columns') {
