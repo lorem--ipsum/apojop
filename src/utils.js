@@ -3,6 +3,10 @@ angular.module('apojop.utils', [])
 .factory('check', function() {
   return {
     primitive: function(value) {
+      if (angular.isDate(value)) {
+        return true;
+      }
+
       return ['string', 'number', 'function', 'boolean'].indexOf(typeof value) !== -1;
     }
   };
