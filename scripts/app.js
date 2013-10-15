@@ -10,15 +10,7 @@ angular.module('npp', ['apojop'])
   $scope.max_columns = 80;
   $scope.max_depth = 2;
   
-  $scope.example = {
-    axes: {
-      x: {type: "date", tooltipFormatter: function (d) {return moment(d).fromNow();}, key: "x"},
-      y: {type: "linear"}
-    },
-    series: [
-      {y: "val_0", label: "A time series", color: "#9467bd"}
-    ],
-    lineMode: "linear",
-    tooltipMode: "default"
-  };
+  $scope.example = [
+    {lorem: 'ipsum', dolor: new Date(), is_it: true, obj: {foo: 'bar'}}
+  ];
 });
