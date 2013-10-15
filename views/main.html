@@ -1,0 +1,26 @@
+<div class="units-row">
+  <div class="unit-70">
+    <pre ng-bind-html-unsafe="examples[0] | pretty:max_cols:'columns'"></pre>
+    <pre ng-bind-html-unsafe="examples[0] | pretty:depth:'levels'"></pre>
+  </div>
+  <div class='unit-30'>
+    <form class='forms'>
+      <fieldset>
+        <legend>By columns</legend>
+        <p>
+          <span class='small'>Maximum columns</span>
+          <input type="range" ng-model="max_cols" min="0" max="500" step="1">
+          <span class='label label-data'>{{max_cols}}</span>
+        </p>
+      </fieldset>
+      <fieldset>
+        <legend>By depth</legend>
+        <p>
+          <span class='small'>Maximum depth</span>
+          <input type="range" ng-model="depth" min="0" max="50" step="1">
+          <span class='label label-data'>{{depth}}</span>
+        </p>
+      </fieldset>
+    </form>
+  </div>
+</div>

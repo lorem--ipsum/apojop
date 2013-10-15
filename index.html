@@ -9,23 +9,30 @@
   
   <!-- Project CSS -->
   <link rel="stylesheet" type="text/css" href="css/app.css"/>
-  
-  <!-- Favicoooooon ! -->
-  <link rel="icon" type="image/png" href="assets/favicon.png">
 </head>
-<body ng-controller='DemoCtrl'>
-  <div class='units-row'>
-    <div ng-repeat='example in examples'>
-      <pre ng-bind-html-unsafe="example | pretty:5:'columns'"></pre>
-      <pre ng-bind-html-unsafe="example | pretty:2:'levels'"></pre>
+<body>
+  <div class="units-row">
+    <div class='unit-100'>
+      <header id="header" class="group">
+        
+        <h1><a href="#/about">ng-pojo-print</a></h1>
+        <nav class="nav-g">
+          <ul>
+            <li><a href="http://plnkr.co/edit/uqqg7K?p=preview">Playground <i class='icon-external-link'></i></a></li>
+            <li><a href="http://github.com/lorem--ipsum/ng-pojo-print">Github <i class='icon-external-link'></i></a></li>
+          </ul>
+        </nav>
+      </header>
     </div>
+  </div>
+  <div class="units-row">
+    <div class='units-row' ng-view></div>
   </div>
 </body>
 <!-- AngularJS -->
 <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
 
 <!-- Project libs -->
-<script type="text/javascript" src="src/utils.js"></script>
-<script type="text/javascript" src="src/ng-pojo-print.js"></script>
+<script type="text/javascript" src="dist/ng-pojo-print.min.js"></script>
 <script type="text/javascript" src="scripts/app.js"></script>
 </html>
