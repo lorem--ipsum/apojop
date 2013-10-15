@@ -1,0 +1,14 @@
+{
+  "name": "ng-pojo-print",
+  "version": "0.2",
+  "main": "dist/ng-pojo-print.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components"
+  ],
+  "devDependencies": {
+    "angular": "~1.0.6",
+    "angular-mocks": "~1.0.6"
+  }
+}
