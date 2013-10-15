@@ -1,4 +1,4 @@
-ng-pojo-print
+APOJOP
 =============
 
-Plain Old Javascript Objects pretty printer for AngularJS
+Awesome Plain Old JavaScript Objects Printer for AngularJS.
