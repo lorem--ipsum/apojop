@@ -1,7 +1,7 @@
 {
-  "name": "ng-pojo-print",
+  "name": "apojop",
   "version": "0.2",
-  "main": "dist/ng-pojo-print.js",
+  "main": "dist/apojop.js",
   "ignore": [
     "**/.*",
     "node_modules",

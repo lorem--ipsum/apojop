@@ -1,4 +1,4 @@
-angular.module('ng-pojo-print', ['ng-pojo-print.utils'])
+angular.module('apojop', ['apojop.utils'])
 
 .filter('pretty', ['prettils', function(prettils) {
   return function(object, value, type) {

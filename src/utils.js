@@ -1,4 +1,4 @@
-angular.module('ng-pojo-print.utils', [])
+angular.module('apojop.utils', [])
 
 .factory('check', function() {
   return {

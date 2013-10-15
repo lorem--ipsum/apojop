@@ -1,5 +1,5 @@
 describe('utils', function() {
-  beforeEach(module('ng-pojo-print.utils'));
+  beforeEach(module('apojop.utils'));
 
   describe('check factory', function() {
     it('should say strings are primitive', inject(function(check) {

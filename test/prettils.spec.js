@@ -1,5 +1,5 @@
 describe('utils', function() {
-  beforeEach(module('ng-pojo-print.utils'));
+  beforeEach(module('apojop.utils'));
 
   var _oldColor;
 

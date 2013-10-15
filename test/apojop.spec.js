@@ -1,5 +1,5 @@
-describe('ng-pojo-print', function() {
-  beforeEach(module('ng-pojo-print'));
+describe('apojop', function() {
+  beforeEach(module('apojop'));
   
   beforeEach(inject(function(prettils) {
     spyOn(prettils, 'columns').andCallThrough();
