@@ -1,10 +1,47 @@
+<h4>What's with this ?</h4>
+<div class="units-row">
+<p>APOJOP is an object pretty-printer for AngularJS. Basically, it does what you'd do as a developer : it makes your JavaScript objects look good in HTML. You don't want your objects to be printed one key/value per line, but the basic <code>JSON.stringify(myObject, undefined, 2)</code> is not enough for you. You just want <em>something that prints objects on one line where they're not too long, and unfold them when they are</em>. Well, here is APOJOP.
+</p>
+</div>
+
+<h4>Code</h4>
+<div class="units-row">
+<span class='label label-data'>HTML</span>
+<pre>
+ &lt;pre&gt;ng-bind-html-unsafe="myObject | pretty:max_columns:'columns'"&gt;&lt;/pre&gt;
+ &lt;pre&gt;ng-bind-html-unsafe="myObject | pretty:max_levels:'levels'"&gt;&lt;/pre&gt;
+</pre>
+<span class='label label-data'>JavaScript</span>
+<pre>
+ angular.module('TehAppz')
+   .controller('MyCtrl', function($scope) {
+     $scope.my_object = [
+      {
+        a_string: 'ipsum',
+        a_date: new Date(),
+        a_boolean: true,
+        an_obj: {ping: 'pong', a_closure: function(a, b) {return (a && b) ? a + b : NaN;}},
+        an_array: ['lorem', 'ispum', 'dolor', 'sit', 'amet', 1337]
+      },
+      {
+        a_string: 'hello',
+        a_date: new Date(),
+        a_boolean: true,
+        an_obj: {ping: 'is', a_closure: function(a, b) {return (a && b) ? a + b : NaN;}},
+        an_array: ['it', 'tea', 'you\'re', 'looking', 'for', 1337]
+      }
+    ];
+   });
+</pre>
+</div>
+<h4>Output</h4>
 <div class="units-row">
   <div class='unit-50'>
-    The printer below will try to print lines which are shorter than {{max_columns}} character{{(max_columns > 1 && "s" || "")}}.<br>
+    <p>The printer below will try to print lines which are shorter than {{max_columns}} character{{(max_columns > 1 && "s" || "")}}. If a line is longer than that and contains complex things such as objects or arrays, it will unfold it. Otherwise, it will simply print it. Try to change the treshold below !</p>
     <input type="range" ng-model="max_columns" min="0" max="500" step="1">
   </div>
   <div class='unit-50'>
-    The printer below will try to unfold {{max_depth}} level{{(max_depth > 1 && "s" || "")}}.<br>
+    <p>The printer below will try to unfold {{max_depth}} level{{(max_depth > 1 && "s" || "")}}. Sometimes unfolding is not possible, for instance with primitive objects such as dates, numbers, strings... Then the printer will simply print the value, regardless of the desired depth setting.</p>
     <input type="range" ng-model="max_depth" min="0" max="10" step="1">
   </div>
 </div>
