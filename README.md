@@ -1,4 +1,4 @@
-APOJOP
+APOJOP [![Build Status](https://travis-ci.org/lorem--ipsum/apojop.png?branch=master)](https://travis-ci.org/lorem--ipsum/apojop)
 =============
 
 Awesome Plain Old JavaScript Objects Printer for AngularJS.
