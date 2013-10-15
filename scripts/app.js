@@ -11,6 +11,19 @@ angular.module('npp', ['apojop'])
   $scope.max_depth = 2;
   
   $scope.example = [
-    {lorem: 'ipsum', dolor: new Date(), is_it: true, obj: {foo: 'bar'}}
+    {
+      a_string: 'ipsum',
+      a_date: new Date(),
+      a_boolean: true,
+      an_obj: {ping: 'pong', a_closure: function(a, b) {return (a && b) ? a + b : NaN;}},
+      an_array: ['lorem', 'ispum', 'dolor', 'sit', 'amet', 1337]
+    },
+    {
+      a_string: 'hello',
+      a_date: new Date(),
+      a_boolean: true,
+      an_obj: {ping: 'is', a_closure: function(a, b) {return (a && b) ? a + b : NaN;}},
+      an_array: ['it', 'tea', 'you\'re', 'looking', 'for', 1337]
+    }
   ];
 });

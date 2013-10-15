@@ -1,10 +1,10 @@
 <div class="units-row">
   <div class='unit-50'>
-    The printer below will try to print lines which are shorter than {{max_columns}} characters.<br>
+    The printer below will try to print lines which are shorter than {{max_columns}} character{{(max_columns > 1 && "s" || "")}}.<br>
     <input type="range" ng-model="max_columns" min="0" max="500" step="1">
   </div>
   <div class='unit-50'>
-    The printer below will try to unfold {{max_depth}} levels.<br>
+    The printer below will try to unfold {{max_depth}} level{{(max_depth > 1 && "s" || "")}}.<br>
     <input type="range" ng-model="max_depth" min="0" max="10" step="1">
   </div>
 </div>
