@@ -1,3 +1,4 @@
+![logo](http://lorem--ipsum.github.io/apojop/assets/logo.png)
 APOJOP [![Build Status](https://travis-ci.org/lorem--ipsum/apojop.png?branch=master)](https://travis-ci.org/lorem--ipsum/apojop)
 =============
 
