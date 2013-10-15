@@ -42,7 +42,7 @@ acc {
 }
 
 #header>h1>a>img {
-  vertical-align: middle;
+  vertical-align: top;
 }
 
 .example {
