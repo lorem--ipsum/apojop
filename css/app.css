@@ -3,6 +3,21 @@ body {
   margin: 0 auto;
 }
 
+h1 {
+  font-family: 'Libre Baskerville', serif;
+}
+
+h3 {
+  font-family: 'Libre Baskerville', serif;
+  color: #aaaaaa;
+  /*border-bottom: 1px solid #e3e3e3;*/
+}
+
+acc {
+  color: #999999;
+  border-bottom: 1px solid;
+}
+
 /* HEADER */
 #header {
   padding-top: 15px;
@@ -30,34 +45,13 @@ body {
   vertical-align: middle;
 }
 
-/* HOME */
-
-.preview-chart {
+.example {
+  font-size: 11px;
+  overflow-y: auto;
   height: 500px;
-  border: 1px solid #CECECE;
-  box-shadow: 6px 6px 10px #DDD;
-  margin-bottom: 30px;
-}
-
-/* THUMBNAIL */
-.thumbnail {
-  box-shadow: 6px 6px 10px #DDD;
-  height: 600px;
+  max-height: 500px;
   padding: 10px;
-  border: 1px solid #CECECE;
-}
-
-.thumbnail .chart {
-  height: 100%;
-}
-
-.thumbnail .options {
-  padding: 10px;
-  height: 500px;
-  border-left: 1px solid #CECECE;
-  height: 100%;
-}
-
-.thumbnail .options > pre {
-  font-size: 10px;
+  margin-bottom: 20px; 
+  border-radius: .5em;
+  border: 1px solid #e3e3e3;
 }
