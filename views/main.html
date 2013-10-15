@@ -4,6 +4,26 @@
 </p>
 </div>
 
+
+<h4>Output</h4>
+<div class="units-row">
+  <div class='unit-50'>
+    <p>The printer below will try to print lines which are shorter than {{max_columns}} character{{(max_columns > 1 && "s" || "")}}. If a line is longer than that and contains complex things such as objects or arrays, it will unfold it. Otherwise, it will simply print it. Try to change the treshold below !</p>
+    <input type="range" ng-model="max_columns" min="0" max="500" step="1">
+  </div>
+  <div class='unit-50'>
+    <p>The printer below will try to unfold {{max_depth}} level{{(max_depth > 1 && "s" || "")}}. Sometimes unfolding is not possible, for instance with primitive objects such as dates, numbers, strings... Then the printer will simply print the value, regardless of the desired depth setting.</p>
+    <input type="range" ng-model="max_depth" min="0" max="10" step="1">
+  </div>
+</div>
+<div class="units-row">
+  <div class='unit-50 example'>
+    <pre ng-bind-html-unsafe="example | pretty:max_columns:'columns'"></pre>
+  </div>
+  <div class='unit-50 example'>
+    <pre ng-bind-html-unsafe="example | pretty:max_depth:'levels'"></pre>
+  </div>
+</div>
 <h4>Code</h4>
 <div class="units-row">
 <span class='label label-data'>HTML</span>
@@ -33,23 +53,4 @@
     ];
    });
 </pre>
-</div>
-<h4>Output</h4>
-<div class="units-row">
-  <div class='unit-50'>
-    <p>The printer below will try to print lines which are shorter than {{max_columns}} character{{(max_columns > 1 && "s" || "")}}. If a line is longer than that and contains complex things such as objects or arrays, it will unfold it. Otherwise, it will simply print it. Try to change the treshold below !</p>
-    <input type="range" ng-model="max_columns" min="0" max="500" step="1">
-  </div>
-  <div class='unit-50'>
-    <p>The printer below will try to unfold {{max_depth}} level{{(max_depth > 1 && "s" || "")}}. Sometimes unfolding is not possible, for instance with primitive objects such as dates, numbers, strings... Then the printer will simply print the value, regardless of the desired depth setting.</p>
-    <input type="range" ng-model="max_depth" min="0" max="10" step="1">
-  </div>
-</div>
-<div class="units-row">
-  <div class='unit-50 example'>
-    <pre ng-bind-html-unsafe="example | pretty:max_columns:'columns'"></pre>
-  </div>
-  <div class='unit-50 example'>
-    <pre ng-bind-html-unsafe="example | pretty:max_depth:'levels'"></pre>
-  </div>
 </div>
