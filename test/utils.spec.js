@@ -14,8 +14,8 @@ describe('utils', function() {
       expect(check.primitive(function() {})).toBeTruthy();
     }));
 
-    it('should say dates are not primitive', inject(function(check) {
-      expect(check.primitive(new Date())).toBeFalsy();
+    it('should say dates are primitive', inject(function(check) {
+      expect(check.primitive(new Date())).toBeTruthy();
     }));
 
     it('should say objects are not primitive', inject(function(check) {
