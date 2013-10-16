@@ -11,7 +11,7 @@
     "test",
     "Gruntfile.js",
     "karma.conf.js",
-    "package.js"
+    "package.json"
   ],
   "dependencies": {
     "angular": "~1.0.6"
