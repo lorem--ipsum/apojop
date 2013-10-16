@@ -1,12 +1,18 @@
 {
   "name": "apojop",
-  "version": "0.2",
-  "main": "dist/apojop.js",
+  "version": "1.0.0-beta",
+  "main": "apojop.min.js",
   "ignore": [
     "**/.*",
+    "bower_components",
+    "coverage",
     "node_modules",
-    "components"
+    "src",
+    "test"
   ],
+  "dependencies": {
+    "angular": "~1.0.6",
+  },
   "devDependencies": {
     "angular": "~1.0.6",
     "angular-mocks": "~1.0.6"

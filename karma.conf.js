@@ -8,12 +8,12 @@ files = [
   JASMINE_ADAPTER,
   'bower_components/angular/angular.js',
   'bower_components/angular-mocks/angular-mocks.js',
-  'dist/apojop.min.js',
+  'apojop.min.js',
   '/tmp/apojop.spec.js'
 ];
 
 preprocessors = {
-  'dist/apojop.min.js': 'coverage'
+  'apojop.min.js': 'coverage'
 };
 
 // list of files to exclude

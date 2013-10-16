@@ -68,7 +68,7 @@ module.exports = function(grunt) {
       },
       js: {
         src: '<%= concat.js.dest %>',
-        dest: 'dist/<%= pkg.name %>.min.js'
+        dest: '<%= pkg.name %>.min.js'
       }
     },
 
