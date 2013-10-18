@@ -1,8 +1,7 @@
-![logo](http://lorem--ipsum.github.io/apojop/assets/logo.png)
 APOJOP [![Build Status](https://travis-ci.org/lorem--ipsum/apojop.png?branch=master)](https://travis-ci.org/lorem--ipsum/apojop)
 =============
 
-Awesome Plain Old JavaScript Objects Printer for AngularJS.
+Awesome Plain Old JavaScript Objects Printer for AngularJS. A demo is available [here](http://lorem--ipsum.github.io/apojop/).
 
 ### What's that ? ###
 It's a filter that you'll use just like the `json` filter from AngularJS core package.
