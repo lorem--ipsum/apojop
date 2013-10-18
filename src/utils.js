@@ -7,6 +7,10 @@ angular.module('apojop.utils', [])
         return true;
       }
 
+      if (value === null || value === undefined) {
+        return true;
+      }
+
       return ['string', 'number', 'function', 'boolean'].indexOf(typeof value) !== -1;
     }
   };
@@ -54,6 +58,16 @@ angular.module('apojop.utils', [])
 
       if (angular.isDate(value)) {
         return this.date(value);
+      }
+
+      if (value === null) {
+        colored = this.color("null", 'green');
+        raw = "null";
+      }
+
+      if (value === undefined) {
+        colored = this.color("undefined", 'green');
+        raw = "undefined";
       }
 
       if (typeof value === 'string') {

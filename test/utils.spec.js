@@ -21,6 +21,14 @@ describe('utils', function() {
     it('should say objects are not primitive', inject(function(check) {
       expect(check.primitive({foo: 'bar', baz: 12})).toBeFalsy();
     }));
+
+    it('should say null is a primitive', inject(function(check) {
+      expect(check.primitive(null)).toBeTruthy();
+    }));
+
+    it('should say undefined is a primitive', inject(function(check) {
+      expect(check.primitive(undefined)).toBeTruthy();
+    }));
     
     it('should say arrays are not primitive', inject(function(check) {
       expect(check.primitive(['bar', 12])).toBeFalsy();
@@ -60,6 +68,18 @@ describe('utils', function() {
       expect(format.primitive(false)).toEqual({
         raw: 'false',
         colored: '<span style="color: green;">false</span>'
+      });
+    }));
+
+    it('should format null or undefined', inject(function(format) {
+      expect(format.primitive(null)).toEqual({
+        raw: 'null',
+        colored: '<span style="color: green;">null</span>'
+      });
+
+      expect(format.primitive(undefined)).toEqual({
+        raw: 'undefined',
+        colored: '<span style="color: green;">undefined</span>'
       });
     }));
 
