@@ -165,7 +165,7 @@ angular.module('apojop.utils', [])
 
     joinLines: function(lines, isArray, padding) {
       var string = (isArray ? '[' : '{') + '\n';
-      string += lines.join(',\n').replace(/\s(\(x\d+\)),?\n/g, ', $1\n') + '\n';
+      string += lines.join(',\n').replace(/\s(\(x\d+\))(,)?\n/g, '$2 $1\n') + '\n';
       string += padding + (isArray ? ']' : '}');
 
       return string;
