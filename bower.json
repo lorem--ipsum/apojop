@@ -8,10 +8,13 @@
     "coverage",
     "node_modules",
     "src",
-    "test"
+    "test",
+    "Gruntfile.js",
+    "karma.conf.js",
+    "package.json"
   ],
   "dependencies": {
-    "angular": "~1.0.6",
+    "angular": "~1.0.6"
   },
   "devDependencies": {
     "angular": "~1.0.6",
