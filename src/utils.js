@@ -106,6 +106,8 @@ angular.module('apojop.utils', [])
         for (var i = 0; i < object.length; i++) {
           lines.push(padding + this.levels(object[i], depth - 1, padding + '  '));
         }
+        lines = this.compactLines(lines);
+
       } else {
         for (var key in object) {
           lines.push(padding + format.key(key).colored + this.levels(object[key], depth - 1, padding + '  '));
@@ -114,7 +116,7 @@ angular.module('apojop.utils', [])
 
       padding = padding.replace(/.{2}$/, '');
 
-      return (isArray ? '[' : '{') + '\n' + lines.join(',\n') + '\n' + padding + (isArray ? ']' : '}');
+      return this.joinLines(lines, isArray, padding);
     },
 
     columns: function(object, wideness, padding) {
@@ -133,6 +135,8 @@ angular.module('apojop.utils', [])
         for (var i = 0; i < object.length; i++) {
           lines.push(padding + this.columns(object[i], wideness, padding + '  '));
         }
+        lines = this.compactLines(lines);
+
       } else {
         for (var key in object) {
           lines.push(padding + format.key(key).colored + this.columns(object[key], wideness, padding + '  '));
@@ -141,7 +145,37 @@ angular.module('apojop.utils', [])
 
       padding = padding.replace(/.{2}$/, '');
 
-      return (isArray ? '[' : '{') + '\n' + lines.join(',\n') + '\n' + padding + (isArray ? ']' : '}');
+
+      return this.joinLines(lines, isArray, padding);
+    },
+
+    joinLines: function(lines, isArray, padding) {
+      var string = (isArray ? '[' : '{') + '\n';
+      string += lines.join(',\n').replace(/\s(\(x\d+\)),\n/g, ', $1\n') + '\n';
+      string += padding + (isArray ? ']' : '}');
+
+      return string;
+    },
+
+    compactLines: function(lines) {
+      var count = 0;
+      var new_lines = [lines[0]];
+
+      for (var i = 1; i < lines.length; i++) {
+        if (lines[i] === lines[i-1]) {
+          count++;
+          continue;
+        }
+
+        if (count > 0) {
+          new_lines[new_lines.length-1] = new_lines[new_lines.length-1] + ' (x' + (count+1) + ')';
+          count = 0;
+        }
+
+        new_lines.push(lines[i]);
+      }
+
+      return new_lines;
     },
 
     flatten: function(object) {
