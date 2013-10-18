@@ -165,7 +165,7 @@ angular.module('apojop.utils', [])
 
     joinLines: function(lines, isArray, padding) {
       var string = (isArray ? '[' : '{') + '\n';
-      string += lines.join(',\n').replace(/\s(\(x\d+\)),\n/g, ', $1\n') + '\n';
+      string += lines.join(',\n').replace(/\s(\(x\d+\)),?\n/g, ', $1\n') + '\n';
       string += padding + (isArray ? ']' : '}');
 
       return string;
@@ -187,6 +187,11 @@ angular.module('apojop.utils', [])
         }
 
         new_lines.push(lines[i]);
+      }
+
+      if (count > 0) {
+        new_lines[new_lines.length-1] = new_lines[new_lines.length-1] + ' (x' + (count+1) + ')';
+        count = 0;
       }
 
       return new_lines;
