@@ -1,6 +1,6 @@
 {
   "name": "apojop",
-  "version": "1.0.3-beta",
+  "version": "1.0.4",
   "main": "apojop.min.js",
   "ignore": [
     "**/.*",
@@ -14,10 +14,13 @@
     "package.json"
   ],
   "dependencies": {
-    "angular": "~1.0.6"
+    "angular": "~1.2.15"
   },
   "devDependencies": {
-    "angular": "~1.0.6",
-    "angular-mocks": "~1.0.6"
+    "angular": "~1.2.15",
+    "angular-mocks": "~1.2.15"
+  },
+  "resolutions": {
+    "angular": "1.2.15"
   }
 }
