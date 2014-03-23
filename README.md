@@ -34,13 +34,13 @@ Include the `apojop.min.js` somewhere in your project, add the module to your ap
 
 In your HTML file, just add the following line :
 ```html
-<pre ng-bind-html-unsafe="var object =(my_object|pretty:80:'columns')"></pre>
+<pre ng-bind-html="my_object|pretty:80:'columns'"></pre>
 ```
 
 or, for a depth based prettifying :
 ```html
-<pre ng-bind-html-unsafe="var object =(my_object|pretty:2:'levels')"></pre>
+<pre ng-bind-html="my_object|pretty:2:'levels'"></pre>
 ```
 
 ### Tests ###
-It is 100% tested thanks to Karma, PhantomJS, and Jasmine.
+Apojop is 100% tested thanks to Karma, PhantomJS, and Jasmine.
