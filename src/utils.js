@@ -7,6 +7,10 @@ angular.module('apojop.utils', [])
         return true;
       }
 
+      if (value === null || value === undefined) {
+        return true;
+      }
+
       return ['string', 'number', 'function', 'boolean'].indexOf(typeof value) !== -1;
     }
   };
@@ -54,6 +58,16 @@ angular.module('apojop.utils', [])
 
       if (angular.isDate(value)) {
         return this.date(value);
+      }
+
+      if (value === null) {
+        colored = this.color("null", 'green');
+        raw = "null";
+      }
+
+      if (value === undefined) {
+        colored = this.color("undefined", 'green');
+        raw = "undefined";
       }
 
       if (typeof value === 'string') {
@@ -151,7 +165,7 @@ angular.module('apojop.utils', [])
 
     joinLines: function(lines, isArray, padding) {
       var string = (isArray ? '[' : '{') + '\n';
-      string += lines.join(',\n').replace(/\s(\(x\d+\)),\n/g, ', $1\n') + '\n';
+      string += lines.join(',\n').replace(/\s(\(x\d+\))(,)?\n/g, '$2 $1\n') + '\n';
       string += padding + (isArray ? ']' : '}');
 
       return string;
@@ -173,6 +187,11 @@ angular.module('apojop.utils', [])
         }
 
         new_lines.push(lines[i]);
+      }
+
+      if (count > 0) {
+        new_lines[new_lines.length-1] = new_lines[new_lines.length-1] + ' (x' + (count+1) + ')';
+        count = 0;
       }
 
       return new_lines;

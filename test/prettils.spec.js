@@ -28,6 +28,20 @@ describe('utils', function() {
 
         expect(prettils.columns(given, 25, '  ')).toBe(expectation);
       }));
+
+      it('should work for last value', inject(function(prettils) {
+        var given = [null, {foo: 'baz'}, null, null, null];
+
+        var expectation = [
+        '[',
+        '  null,',
+        '  {foo: "baz"},',
+        '  null (x3)',
+        ']'
+        ].join('\n');
+
+        expect(prettils.columns(given, 25, '  ')).toBe(expectation);
+      }));
     });
 
     describe('formatting by columns', function() {
