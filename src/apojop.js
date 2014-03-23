@@ -1,6 +1,6 @@
 angular.module('apojop', ['apojop.utils'])
 
-.filter('pretty', ['prettils', function(prettils) {
+.filter('pretty', ['$sce', 'prettils', function($sce, prettils) {
   return function(object, value, type) {
     if (value === undefined) {
       value = 2;
@@ -9,9 +9,9 @@ angular.module('apojop', ['apojop.utils'])
     }
 
     if (type === 'columns') {
-      return prettils.columns(object, value, '  ');
+      return $sce.trustAsHtml(prettils.columns(object, value, '  '));
     }
 
-    return prettils.levels(object, value , '  ');
+    return $sce.trustAsHtml(prettils.levels(object, value , '  '));
   };
 }]);
