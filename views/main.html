@@ -18,18 +18,18 @@
 </div>
 <div class="units-row">
   <div class='unit-50 example'>
-    <pre ng-bind-html-unsafe="example | pretty:max_columns:'columns'"></pre>
+    <pre ng-bind-html="example | pretty:max_columns:'columns'"></pre>
   </div>
   <div class='unit-50 example'>
-    <pre ng-bind-html-unsafe="example | pretty:max_depth:'levels'"></pre>
+    <pre ng-bind-html="example | pretty:max_depth:'levels'"></pre>
   </div>
 </div>
 <h4>Code</h4>
 <div class="units-row">
 <span class='label label-data'>HTML</span>
 <pre>
- &lt;pre&gt;ng-bind-html-unsafe="myObject | pretty:max_columns:'columns'"&gt;&lt;/pre&gt;
- &lt;pre&gt;ng-bind-html-unsafe="myObject | pretty:max_levels:'levels'"&gt;&lt;/pre&gt;
+ &lt;pre ng-bind-html="myObject | pretty:max_columns:'columns'"&gt;&lt;/pre&gt;
+ &lt;pre ng-bind-html="myObject | pretty:max_levels:'levels'"&gt;&lt;/pre&gt;
 </pre>
 <span class='label label-data'>JavaScript</span>
 <pre>
