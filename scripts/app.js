@@ -1,4 +1,4 @@
-angular.module('npp', ['apojop'])
+angular.module('npp', ['ngRoute', 'apojop'])
 
 .config(function config($routeProvider) {
   $routeProvider
@@ -9,7 +9,7 @@ angular.module('npp', ['apojop'])
 .controller('DemoCtrl', function($scope) {
   $scope.max_columns = 80;
   $scope.max_depth = 2;
-  
+
   $scope.example = [
     {
       a_string: 'ipsum',

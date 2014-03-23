@@ -14,10 +14,11 @@
     "package.json"
   ],
   "dependencies": {
-    "angular": "~1.0.6"
+    "angular": "1.2.15",
+    "angular-route": "~1.2.15"
   },
   "devDependencies": {
-    "angular": "~1.0.6",
-    "angular-mocks": "~1.0.6"
+    "angular": "~1.2.15",
+    "angular-mocks": "~1.2.15"
   }
 }
