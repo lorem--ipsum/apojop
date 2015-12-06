@@ -6,6 +6,23 @@ angular.module('apojop', ['apojop.utils'])
   };
 }])
 
+.filter('indent', ['prettils', function(prettils) {
+  return function(object, value, type) {
+    if (value === undefined) {
+      value = 2;
+    } else {
+      value = +value;
+    }
+
+    if (type === 'columns') {
+      return prettils.columns(object, value, '  ', true);
+    }
+
+    return prettils.levels(object, value , '  ', true);
+  };
+}])
+
+
 .filter('prettyUnsafe', ['prettils', function(prettils) {
   return function(object, value, type) {
     if (value === undefined) {

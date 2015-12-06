@@ -8,16 +8,17 @@
   },
   "bugs": "https://github.com/lorem--ipsum/apojop/issues",
   "devDependencies": {
-    "matchdep": "*",
     "grunt": "*",
-    "grunt-karma": "*",
-    "grunt-contrib-watch": "*",
     "grunt-contrib-concat": "*",
     "grunt-contrib-jshint": "*",
     "grunt-contrib-uglify": "*",
-    "karma-coverage": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-karma": "*",
     "karma": "*",
+    "karma-coverage": "*",
     "karma-jasmine": "*",
-    "karma-phantomjs-launcher": "~0.1.2"
+    "karma-phantomjs-launcher": "~0.1.2",
+    "matchdep": "*",
+    "phantomjs": "^1.9.19"
   }
 }

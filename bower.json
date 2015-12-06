@@ -14,13 +14,13 @@
     "package.json"
   ],
   "dependencies": {
-    "angular": "~1.2.15"
+    "angular": "~1.4.8"
   },
   "devDependencies": {
-    "angular": "~1.2.15",
-    "angular-mocks": "~1.2.15"
+    "angular": "~1.4.8",
+    "angular-mocks": "~1.4.8"
   },
   "resolutions": {
-    "angular": "1.2.15"
+    "angular": "1.4.8"
   }
 }

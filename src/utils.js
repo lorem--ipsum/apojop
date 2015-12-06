@@ -104,13 +104,15 @@ angular.module('apojop.utils', [])
 
 .factory('prettils', ['format', 'check', '$length', function(format, check, $length) {
   return {
-    levels: function(object, depth, padding) {
+    levels: function(object, depth, padding, raw) {
+      var property = !!raw ? 'raw' : 'colored';
+
       if (check.primitive(object)) {
-        return format.primitive(object).colored;
+        return format.primitive(object)[property];
       }
 
       if (depth === 0) {
-        return this.flatten(object);
+        return this.flatten(object, raw);
       }
 
       var isArray = angular.isArray(object);
@@ -118,13 +120,13 @@ angular.module('apojop.utils', [])
       var lines = [];
       if (isArray) {
         for (var i = 0; i < object.length; i++) {
-          lines.push(padding + this.levels(object[i], depth - 1, padding + '  '));
+          lines.push(padding + this.levels(object[i], depth - 1, padding + '  ', raw));
         }
         lines = this.compactLines(lines);
 
       } else {
         for (var key in object) {
-          lines.push(padding + format.key(key).colored + this.levels(object[key], depth - 1, padding + '  '));
+          lines.push(padding + format.key(key)[property] + this.levels(object[key], depth - 1, padding + '  ', raw));
         }
       }
 
@@ -133,13 +135,15 @@ angular.module('apojop.utils', [])
       return this.joinLines(lines, isArray, padding);
     },
 
-    columns: function(object, wideness, padding) {
+    columns: function(object, wideness, padding, raw) {
+      var property = !!raw ? 'raw' : 'colored';
+
       if (check.primitive(object)) {
-        return format.primitive(object).colored;
+        return format.primitive(object)[property];
       }
 
       if ($length.of(object) <= wideness) {
-        return this.flatten(object);
+        return this.flatten(object, raw);
       }
 
       var isArray = angular.isArray(object);
@@ -147,13 +151,13 @@ angular.module('apojop.utils', [])
       var lines = [];
       if (isArray) {
         for (var i = 0; i < object.length; i++) {
-          lines.push(padding + this.columns(object[i], wideness, padding + '  '));
+          lines.push(padding + this.columns(object[i], wideness, padding + '  ', raw));
         }
         lines = this.compactLines(lines);
 
       } else {
         for (var key in object) {
-          lines.push(padding + format.key(key).colored + this.columns(object[key], wideness, padding + '  '));
+          lines.push(padding + format.key(key)[property] + this.columns(object[key], wideness, padding + '  ', raw));
         }
       }
 
@@ -197,9 +201,11 @@ angular.module('apojop.utils', [])
       return new_lines;
     },
 
-    flatten: function(object) {
+    flatten: function(object, raw) {
+      var property = !!raw ? 'raw' : 'colored';
+
       if (check.primitive(object)) {
-        return format.primitive(object).colored;
+        return format.primitive(object)[property];
       }
 
       var isArray = angular.isArray(object);
@@ -207,11 +213,11 @@ angular.module('apojop.utils', [])
       var lines = [];
       if (isArray) {
         for (var i = 0; i < object.length; i++) {
-          lines.push(this.flatten(object[i]));
+          lines.push(this.flatten(object[i], raw));
         }
       } else {
         for (var key in object) {
-          lines.push(format.key(key).colored + this.flatten(object[key]));
+          lines.push(format.key(key)[property] + this.flatten(object[key], raw));
         }
       }
 

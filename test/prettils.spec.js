@@ -14,6 +14,22 @@ describe('utils', function() {
       format.color = _oldColor;
     }));
 
+    it('should work in raw mode', inject(function(format, prettils) {
+      format.color = _oldColor;
+
+      var given = [{foo: 'bar'}, {foo: 'bar'}, {foo: 'baz'}, {foo: 'bar'}];
+
+      var expectation = [
+      '[',
+      '  {foo: "bar"}, (x2)',
+      '  {foo: "baz"},',
+      '  {foo: "bar"}',
+      ']'
+      ].join('\n');
+
+      expect(prettils.columns(given, 25, '  ', true)).toBe(expectation);
+    }));
+
     describe('gathering same values', function() {
       it('should work', inject(function(prettils) {
         var given = [{foo: 'bar'}, {foo: 'bar'}, {foo: 'baz'}, {foo: 'bar'}];
@@ -175,7 +191,7 @@ describe('utils', function() {
 
         expect(prettils.levels(given, 1, '  ')).toBe(expectation);
       }));
-      
+
       it('should work with unfolded arrays', inject(function(prettils) {
         var given = {foo: 'bar', baz: ['qux', {pouet: 42}]};
 
